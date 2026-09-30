@@ -4,12 +4,10 @@ import android.Manifest
 import android.content.Context
 import android.location.Location
 import android.location.LocationManager
-import android.os.Build
 import android.os.CancellationSignal
 import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
 import androidx.core.location.LocationManagerCompat
-import io.homeassistant.companion.android.common.util.SdkVersion
 import io.homeassistant.companion.android.common.util.instant
 import io.homeassistant.companion.android.sensors.GeocodeSensorManager.Companion.LOCATION_OUTDATED_THRESHOLD
 import kotlin.coroutines.resume
@@ -18,11 +16,7 @@ import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
 import timber.log.Timber
 
-private val provider: String = if (SdkVersion.isAtLeast(Build.VERSION_CODES.S)) {
-    LocationManager.FUSED_PROVIDER
-} else {
-    LocationManager.GPS_PROVIDER
-}
+private const val provider: String = LocationManager.GPS_PROVIDER
 
 @OptIn(ExperimentalTime::class)
 @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
