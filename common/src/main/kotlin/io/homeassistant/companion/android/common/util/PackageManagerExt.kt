@@ -8,5 +8,5 @@ import android.content.pm.PackageManager
  * @return `true` if the device is an Android Automotive OS device, `false` otherwise.
  */
 fun PackageManager.isAutomotive(): Boolean {
-    return hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)
+    return false
 }
