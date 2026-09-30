@@ -1,5 +1,16 @@
 # Home Assistant Companion for Android
 
+## Изменения (ветка)
+
+- Встроенный WebView вместо системного на время работы приложения.
+  APK брать из архива [WebViewPackage](https://github.com/JonaNorman/WebViewPackage/releases)
+  (полный monolithic APK Google/Android System WebView под нужную ABI, не split из Play).
+  Для arm64: [113.0.5672.136_min24_arm64.apk](https://github.com/JonaNorman/WebViewPackage/releases/download/android/113.0.5672.136_min24_arm64.apk).
+  Класть в `app/webview-apk/<abi>/webview.apk`, например:
+  `app/webview-apk/arm64-v8a/webview.apk`, `app/webview-apk/x86_64/webview.apk`.
+- Отключена automotive-сборка.
+- Minimal: GPS без Google Services (приём и отправка локации), отслеживание зон и настраиваемый интервал обновления GPS.
+
 [![Build Status](https://github.com/home-assistant/android/actions/workflows/onPush.yml/badge.svg)](https://github.com/home-assistant/android/actions/workflows/onPush.yml)  
 [![Play Store](https://img.shields.io/badge/Play%20Store-Download-blue?logo=google-play)](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android)
 [![Play Store Beta](https://img.shields.io/badge/Play%20Store%20Beta-Download-blue?logo=google-play)](https://play.google.com/apps/testing/io.homeassistant.companion.android)
