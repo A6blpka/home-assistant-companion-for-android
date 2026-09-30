@@ -52,6 +52,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     buildConfigField("Boolean", "NO_STRICT_MODE", noStrictMode.toString())
                 }
 
+                androidResources {
+                    noCompress += "apk"
+                }
+
                 buildFeatures {
                     viewBinding = true
                 }
@@ -78,6 +82,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     }
                 }
             }
+
+            configureWebViewApkAssets()
         }
     }
 }

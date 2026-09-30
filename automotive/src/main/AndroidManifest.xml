@@ -85,6 +85,12 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="tiramisu">
 
+        <provider
+            android:name=".webview.WebViewUpgradeInitProvider"
+            android:authorities="${applicationId}.webview-upgrade-init"
+            android:exported="false"
+            android:initOrder="1000" />
+
         <!-- Start things like SensorWorker on device boot -->
         <receiver android:name=".websocket.WebsocketBroadcastReceiver"
             android:exported="true">

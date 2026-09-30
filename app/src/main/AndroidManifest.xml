@@ -105,6 +105,12 @@
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
         tools:targetApi="tiramisu">
 
+        <provider
+            android:name=".webview.WebViewUpgradeInitProvider"
+            android:authorities="${applicationId}.webview-upgrade-init"
+            android:exported="false"
+            android:initOrder="1000" />
+
         <!--
         WARNING: Do not change the fully qualified name of this activity.
         Android shortcuts are tied to its component name; renaming it will permanently
